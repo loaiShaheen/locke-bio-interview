@@ -9,5 +9,5 @@ export class PrescriptionObject {
   public name?: string;
 
   @Field({ nullable: true })
-  public email?: number;
+  public file?: Buffer;
 }

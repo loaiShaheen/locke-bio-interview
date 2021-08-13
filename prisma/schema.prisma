@@ -1,17 +1,15 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgres://admin:admin@localhost:5432/nestjs"
 }
 
 generator client {
   provider = "prisma-client-js"
 }
 
-model User {
+model Prescription {
   id    Int     @id @default(autoincrement())
   email String  @unique
   name  String?
+  file  Bytes   @db.ByteA
 }
