@@ -8,8 +8,8 @@ generator client {
 }
 
 model Prescription {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
+  id    String     @id @default(uuid()) @unique
+  email String?
   name  String?
-  file  Bytes   @db.ByteA
+  file  Bytes?   @db.ByteA
 }

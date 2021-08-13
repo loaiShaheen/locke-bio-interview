@@ -2,6 +2,18 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type PrescriptionObject {
+  id: String!
+  name: String
+  email: String
+  file: String
+}
+
 type Query {
-  test: String!
+  findPrescriptions: [PrescriptionObject!]!
+  downloadPrescription(id: String!): String!
+}
+
+type Mutation {
+  createPrescription(name: String!, input: String!): String!
 }
