@@ -1,7 +1,7 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { PrescriptionObject } from './prescription.model';
 import * as PDFDocument from 'pdfkit';
-import { PrismaService } from 'src/prisma.service';
+import { PrismaService } from '../prisma.service';
 import * as fs from 'fs';
 
 @Resolver((of) => PrescriptionObject)
@@ -28,7 +28,7 @@ export class PrescriptionResolver {
       },
     });
 
-    const asdf = fs.writeFile(
+    fs.writeFile(
       `${prescription.name}-prescription.pdf`,
       prescription.file,
       (err) => {
