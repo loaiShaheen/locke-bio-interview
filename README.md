@@ -35,5 +35,5 @@ $ yarn prisma migrate dev
 now the backend is ready to start using:
 
 ```bash
-@ yarn start:dev
+$ yarn start:dev
 ```
